@@ -16,6 +16,7 @@ Wait about **67 ms** (if **15 Hz** rate) or monitor status register or **DRDY** 
 
 **End_loop**
 
+[3-Axis Digital Compass IC HMC5883L DATASHEETS](https://cdn-shop.adafruit.com/datasheets/HMC5883L_3-Axis_Digital_Compass_IC.pdf)
 ```C++
   #define M_PI 3.14159265359  
   //   Christchurch, 23° 35' EAST  
