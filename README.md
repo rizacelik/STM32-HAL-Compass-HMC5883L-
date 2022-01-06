@@ -2,9 +2,9 @@
 
 ## Below is an example of a (power-on) initialization process for “continuous-measurement mode:
 
-1. Write CRA (00) – **send 0x3C 0x00 0x70** (***8-average**, **15 Hz** default, normal measurement*)
-2. Write CRB (01) – **send 0x3C 0x01 0xA0** (***Gain=5**, or any other desired gain, **scale = 2.56***)
-3. Write Mode (02) – **send 0x3C 0x02 0x00** (*Continuous-measurement mode*)
+1. Write CRA (**00**) – **send 0x3C 0x00 0x70** (***8-average**, **15 Hz** default, normal measurement*)
+2. Write CRB (**01**) – **send 0x3C 0x01 0xA0** (***Gain=5**, or any other desired gain, **scale = 2.56***)
+3. Write Mode (**02**) – **send 0x3C 0x02 0x00** (*Continuous-measurement mode*)
 4. Wait *6 ms* or monitor status register or **DRDY** hardware interrupt pin
 5. **Loop**
 
