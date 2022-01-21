@@ -260,7 +260,7 @@ float compensate(float compass_X, float compass_Y, float compass_Z, float pitch,
   float YH = compass_Y * cos(IMU_roll) + compass_Z * sin(IMU_roll)
        // Azimuth = atan2(YH / XH)
   float Azimuth = atan2(YH / XH) * 180 / M_PI;  
-  Azimuth += declination_mag; // see https://www.magnetic-declination.com/
+  Azimuth += declination_offset_radians; // see https://www.magnetic-declination.com/
 
   if (Azimuth < 0) {
     Azimuth += 360;
