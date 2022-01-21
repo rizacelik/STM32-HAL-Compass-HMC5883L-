@@ -248,5 +248,30 @@ float CompasRead6Axis(void)
 }
 
 float degrees = CompasRead6Axis();
+
+
+// To compensate a compass for Tilt sensor and Compass
+float compensate(float compass_X, float compass_Y, float compass_Z, float pitch, float roll) {
+
+  float IMU_roll = pitch * (M_PI / 180);
+  float IMU_pitch = roll * (M_PI / 180);
+
+  float XH = compass_X * cos(IMU_pitch) + compass_Y * sin(IMU_roll) * sin(IMU_pitch) - compass_Z * cos(IMU_roll) * sin(IMU_pitch);
+  float YH = compass_Y * cos(IMU_roll) + compass_Z * sin(IMU_roll)
+       // Azimuth = atan2(YH / XH)
+  float Azimuth = atan2(YH / XH) * 180 / M_PI;  
+  Azimuth += declination_mag; // see https://www.magnetic-declination.com/
+
+  if (Azimuth < 0) {
+    Azimuth += 360;
+  }
+  else if (Azimuth >= 360) {
+    Azimuth -= 360;
+  }
+
+  return Azimuth;
+}
+
+
 ```
 
