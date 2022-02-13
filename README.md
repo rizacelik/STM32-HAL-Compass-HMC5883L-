@@ -41,7 +41,7 @@ Wait about **67 ms** (if **15 Hz** rate) or monitor status register or **DRDY** 
   int16_t z = ((buffer[4] << 8) | buffer[5]) * scale;
 
   float heading = atan2(x, y);
-  heading += declination_offset_radians;
+  heading -= declination_offset_radians; // declination is positive or EAST. So we have to subtract the angles.
 
   // Correct for when signs are reversed.
   if (heading < 0)
