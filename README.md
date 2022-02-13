@@ -58,6 +58,18 @@ Wait about **67 ms** (if **15 Hz** rate) or monitor status register or **DRDY** 
 End_loop
 ```
 
+
+# What is Magnetic Declination?
+Did you know that magnetic compass does not always point to North? Actually, there are only a few locations on Earth where it points exactly to the True (geographic) North. The direction in which the compass needle points is known as Magnetic North, and the angle between Magnetic North and the True North direction is called magnetic declination.
+
+If the compass at your place is pointing clockwise with respect to the True North, declination is positive or EAST
+If the compass at your place is pointing counter-clockwise with respect to the True North, declination is negative or WEST
+
+![image](https://user-images.githubusercontent.com/19993109/153770299-f81771e1-8781-4f3b-abfd-1c82487a5e74.png)
+![image](https://user-images.githubusercontent.com/19993109/153770313-06bb0adc-2fb6-4ae8-855d-6f9b4a937f44.png)
+
+Magnetic declination must be compensated for by adding the declination to the compass bearing if it is negative or subtracting if it is positive.
+
 # STM32 HAL Example Code
 
 ```C++
