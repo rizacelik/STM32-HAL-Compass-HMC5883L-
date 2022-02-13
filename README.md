@@ -129,12 +129,12 @@ SetDeclination( int declination_degs , int declination_mins, char declination_di
   {
     // North and East are positive
     case 'E':
-      declination_offset_radians = ( declination_degs + (1 / 60 * declination_mins)) * (M_PI / 180);
+      declination_offset_radians = 0 - ( declination_degs + (1 / 60 * declination_mins)) * (M_PI / 180);
       break;
 
     // South and West are negative
     case 'W':
-      declination_offset_radians =  0 - (( declination_degs + (1 / 60 * declination_mins) ) * (M_PI / 180));
+      declination_offset_radians =  (( declination_degs + (1 / 60 * declination_mins) ) * (M_PI / 180));
       break;
   }
 }
